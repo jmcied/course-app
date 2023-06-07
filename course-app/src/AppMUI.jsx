@@ -1,10 +1,21 @@
 import React from "react";
-import Course from "./components/course";
-import "./App.css";
+import Course from "./components/courseMUI";
 import setuCrest from "./assets/setu_crest.png";
+import Box from "@mui/material/Box";
+
+const styles = {
+  appHeader: {
+    backgroundColor: "lightblue",
+    height: "200px",
+    padding: "10px",
+    color: "white",
+  },
+  course: {
+    padding: "10px",
+  },
+};
 
 const App = () => {
-  // Substitute your module names here (Optional).
   const modules = [
     {
       name: "DevOps",
@@ -32,18 +43,17 @@ const App = () => {
       noPracticals: 3,
     },
   ];
-  const name = "Higher Diploma in Computer Science"; // Substitute
+const name = "HDip Computer Science"; // Substitute
 
   return (
     <>
-      <header className="App-header">
-        <img className="center" src={setuCrest} alt="logo" />
+      <header style={styles.appHeader}>
+        <img src={setuCrest} alt="logo" />
       </header>
-      <div className="course">
+      <Box sx={styles.course}>
         <Course title={name} modules={modules} />
-      </div>
+      </Box>
     </>
   );
 };
-
 export default App;
